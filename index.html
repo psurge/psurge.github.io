@@ -1,7 +1,27 @@
-<html>
-  <body>
-    <script type="text/javascript" src="http://securewifi.weebly.com/files/theme/shake.js"></script>
-    
-  <h1>kumar raja</h1>  
-  </body>
-  </html>
+<!DOCTYPE html> 
+<html> 
+<body onload="playVid();"> 
+
+
+
+<video id="myVideo" width="320" height="176">
+  <source src="http://www.w3schools.com/html/horse.ogg" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<script> 
+var vid = document.getElementById("myVideo"); 
+
+function playVid() { 
+    vid.play(); 
+} 
+
+function pauseVid() { 
+    vid.pause(); 
+} 
+</script> 
+
+
+</body> 
+</html>

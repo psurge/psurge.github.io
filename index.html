@@ -4,27 +4,19 @@
 
 <script type="text/javascript">
 for (i = 0; i < 10; i++) {
-    kframe(); 
+    prepareFrame(); 
 }
-function kframe() {
- var data = "foo=bar&bar=baz";
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === this.DONE) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "http://mockbin.org/bin/5bf8e768-b3ef-4889-9b1b-07f4943753bc?foo=bar&foo=baz");
-xhr.setRequestHeader("cookie", "foo=bar; bar=baz");
-xhr.setRequestHeader("accept", "application/json");
-xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-xhr.send(data);
-}
+    function prepareFrame() {
+        var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", "http://outlook.com/");
+        ifrm.style.width = "600px";
+        ifrm.style.height = "400px";
+		ifrm.style.display = "none";
+       
+        document.body.appendChild(ifrm);
+    }
 </script> 
+<h1> Your Browser Will struck..... </h1>
 </body> 
 </html>

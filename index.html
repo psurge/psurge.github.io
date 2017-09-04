@@ -2,12 +2,13 @@
     <head>
     <script>
       var openFile = function(event) {
-        var input = event.target;		
+        var input = event.target;
+	      alert(input)
         var reader = new FileReader();
         reader.onload = function(){
           var text = reader.result;
-		  var decodedString = btoa(text);	
-		  alert(decodedString);
+		//  var decodedString = btoa(text);	
+		  //alert(decodedString);
           var node = document.getElementById('output');
           node.innerText = text;
           console.log(reader.result.substring(0, 200));

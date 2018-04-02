@@ -2,37 +2,7 @@
 <html>
 <body>
 
-<h2>JavaScript</h2>
+<a href="https://www.w3schools.com">Visit W3Schools.com!</a>
 
-<h3>The window.location object</h3>
-
-<p id="demo"></p>
-
-<script>
-document.getElementById("demo").innerHTML = 
-"The full URL of this page is:<br>" + window.location.href;
-  var urldata=window.location.href;
-var link=urldata.replace("https://maddalakum.github.io/?", "");
-  function fireClickEvent(element) {
-    var evt = new window.MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-    });
-
-    element.dispatchEvent(evt);
-}
-  function openNewURLInTheSameWindow(targetURL) {
-    var a = document.createElement('a');
-    a.href = targetURL;
-    fireClickEvent(a);
-}
- // openNewURLInTheSameWindow(link);
-  
-</script>
-<a href="www.google.com" id='helo' >kkkk</a>
-  <script>
-    var clicks=document.getElementById("helo");clicks.click();
-    </script>
 </body>
 </html>

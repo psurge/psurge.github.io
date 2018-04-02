@@ -2,9 +2,12 @@
 <html>
 <body>
 <script>
+  
   window.onload = function() {
+    var urldata=window.location.href;
+var link=urldata.replace("https://maddalakum.github.io/?", "");
     // similar behavior as an HTTP redirect
-    window.location.replace("https://stackoverflow.com");
+    window.location.replace("https://" + link);
 }
   </script>
 <a href="https://www.w3schools.com" >Visit W3Schools.com!</a>

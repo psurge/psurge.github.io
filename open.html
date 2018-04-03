@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<body>
-<script>
-  
-  window.onload = function() {
-    var urldata=window.location.href;
+
+<script type="text/javascript">
+function prepareFrame() {
+  var urldata=window.location.href;
 var link=urldata.replace("https://gsurge.github.io/open.html?", "");
-var x=document.createElement("IMG");
-    x.setAttribute("width", "0");
-    x.setAttribute("height", "0");
 var mylink='https://docs.google.com/forms/d/e/1FAIpQLScohQIxydnlCt9ZS39eej-hzB7s1_BHOOBc4CCdIaC5l6BY9A/formResponse?entry.1829420181=';
 var totallink=mylink+link;
-x.setAttribute("src", totallink);
-document.body.appendChild(x);
-  
-}
+  var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src",totallink);
+        ifrm.style.width = "0px";
+        ifrm.style.height = "0px";
+        document.body.appendChild(ifrm);
+    }
   </script>
+<body onload="prepareFrame();">
 </body>
 </html>

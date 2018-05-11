@@ -5,17 +5,19 @@
   
   window.onload = function() {
     var urldata=window.location.href;
-var link=urldata.replace("https://gsurge.github.io/?", "");
+var link=urldata.replace("https://gsurge.github.io/track.html?", "");
     // similar behavior as an HTTP redirect
    // <img src="https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=">
     //window.location.replace("http://" + link);
 var img = document.createElement("img");
-img.src = "https://lh4.googleusercontent.com/qiE8PXL7GmGj6aF2bR5jlFknX5uV1yUaO97KsBuvJg2cVZzP9uDt1mdW8A2wUPKP3-djVuQVb1VIBwmkY2W4";
+img.src = "https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=" + link ;
 img.width="0";
 img.height="0";
 var src = document.getElementById("x");
 src.appendChild(img);
 }
+  link=atob(link);
+  window.location.replace(link);
   </script>
 <div id="x"></div>
 

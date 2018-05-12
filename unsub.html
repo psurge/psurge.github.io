@@ -53,7 +53,7 @@ function ValidateEmail() {
 else {
  var urldata=window.location.href;
 var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
-    
+	link=btoa(link);
 var img = document.createElement("img");
 img.src = "https://docs.google.com/forms/d/e/1FAIpQLSdC8f_V0JMPM2epOj9Ui8ZyDndSXdwFfa0yU2eD5zJNPyI6JA/formResponse?entry.1096263380=" + link ;
 img.width="0";

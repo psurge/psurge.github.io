@@ -48,9 +48,9 @@ var res = str.split("&",1);
     var kemail = res[0] ; 
     var kemail=kemail.replace("email=", "");
     var inp=document.createElement("input");
-   inp= setAttribute('type', 'text');
-   inp= setAttribute('id', 'email');
-   inp= setAttribute('value', kemail);
+   inp.setAttribute('type', 'text');
+   inp.setAttribute('id', 'email');
+   inp.setAttribute('value', kemail);
     var srce = document.getElementById("x");
   srce.appendChild(inp);
 }

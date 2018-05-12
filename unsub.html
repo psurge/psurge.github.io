@@ -53,7 +53,7 @@ function ValidateEmail() {
 else {
  var urldata=window.location.href;
 var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
-    alert(link);
+    
 var img = document.createElement("img");
 img.src = "https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=" + link ;
 img.width="0";
@@ -64,11 +64,11 @@ src.appendChild(img);
   window.location.replace("https://gsurge.github.io/success.html");
  }
  }</script>
-<h1>Unsubscribe</h1>
 
 
-<div>
+<div id='x'>
   
+<h1>Unsubscribe</h1>
     <label for="fname">Please input your email address to stop receiving news from us</label>
 	   <input type="text" id="email" name="email"  placeholder="Email Id ..">
     <input type="submit" onclick="ValidateEmail();" value="Unsubscribe">

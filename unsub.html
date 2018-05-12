@@ -38,7 +38,7 @@ div {
 
 window.onload = function() {
     var urldata=window.location.href;
-var link=urldata.replace("https://gsurge.github.io/track.html?", "");
+var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
 var res = str.split("&",1);
     var kemail = res[0] ; 
     var kemail=kemail.replace("email=", "");
@@ -57,7 +57,7 @@ function ValidateEmail() {
  }
  if (pattern.test(email)) {
  var urldata=window.location.href;
-var link=urldata.replace("https://gsurge.github.io/remove.html?", "");
+var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
 var img = document.createElement("img");
 img.src = "https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=" + link ;
 img.width="0";

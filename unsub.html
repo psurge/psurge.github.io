@@ -47,8 +47,12 @@ var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
 var res = str.split("&",1);
     var kemail = res[0] ; 
     var kemail=kemail.replace("email=", "");
-    var eput=document.getElementById("email");
-    eput.value=kemail;
+    var inp=document.createElement("input");
+    inp.id="email";
+    inp.type="text";
+    inp.value=kemail;
+    var srce = document.getElementById("x");
+  srce.appendChild(inp);
 }
 
 function ValidateEmail() {
@@ -80,8 +84,8 @@ src.appendChild(img);
 <div>
   
     <label for="fname">Please input your email address to stop receiving news from us</label>
-    <input type="text" id="email" name="email"  placeholder="Email Id ..">
-
+    <div id="x">
+        </div>
   
     <input type="submit" onclick="ValidateEmail();" value="Unsubscribe">
   

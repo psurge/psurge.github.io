@@ -60,9 +60,10 @@ function ValidateEmail() {
     alert('Please provide a valid email address');
      return false;
  }
- if (pattern.test(email)) {
+else {
  var urldata=window.location.href;
 var link=urldata.replace("https://gsurge.github.io/unsub.html?", "");
+    alert(link);
 var img = document.createElement("img");
 img.src = "https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=" + link ;
 img.width="0";

@@ -4,10 +4,13 @@
 <script>
   
   window.onload = function() {
+    var url = window.location.href
+var arr = url.split("/");
+    var domainname=arr[0] + "//" + window.location.hostname + "/?" ;
     var urldata=window.location.href;
-var link=urldata.replace("https://psurge.github.io/?", "");
+var link=urldata.replace(domainname, "");
     // similar behavior as an HTTP redirect
-    window.location.replace("http://" + link);
+  window.location.replace("http://" + link);
 }
   </script>
 
